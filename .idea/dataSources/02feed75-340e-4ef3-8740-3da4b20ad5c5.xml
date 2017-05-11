@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="postgres">
+      <object-id>11826</object-id>
+      <visible>1</visible>
+    </database>
+    <schema id="2" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>673</introspection-state-number>
+      <introspection-timestamp>2017-05-11.18:32:58.210</introspection-timestamp>
+    </schema>
+    <schema id="3" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="4" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="5" parent="1" name="pg_temp_1">
+      <object-id>11077</object-id>
+    </schema>
+    <schema id="6" parent="1" name="pg_toast_temp_1">
+      <object-id>11078</object-id>
+    </schema>
+    <schema id="7" parent="1" name="information_schema">
+      <object-id>11342</object-id>
+    </schema>
+    <table id="8" parent="2" name="book">
+      <object-id>24576</object-id>
+      <state-number>673</state-number>
+    </table>
+    <column id="9" parent="8" name="title">
+      <state-number>671</state-number>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="10" parent="8" name="price">
+      <state-number>671</state-number>
+      <data-type>double precision|0</data-type>
+    </column>
+    <column id="11" parent="8" name="page">
+      <state-number>671</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="12" parent="8" name="year">
+      <state-number>671</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="13" parent="8" name="id">
+      <state-number>672</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="14" parent="8" name="book_id_pk">
+      <object-id>24582</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="15" parent="8" name="book_id_pk">
+      <object-id>24583</object-id>
+      <columns>id</columns>
+      <underlying-index>book_id_pk</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
