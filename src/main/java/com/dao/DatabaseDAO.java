@@ -72,20 +72,35 @@ public class DatabaseDAO implements StorageDAO {
 
     }
 
-    public void updateBook(Book book,int id1) throws SQLException {
-        String sql = "UPDATE book SET title = ?, price = ?, page = ?, year = ?,id = ?";
-        sql += " where id = ?";
+    public void updateBook(Book book) throws SQLException {
 
-        PreparedStatement statement = connection.prepareStatement(sql);
-        statement.setString(1, book.getTitle());
-        statement.setDouble(2, book.getPrice());
-        statement.setInt(3, book.getPages());
-        statement.setInt(4, book.getYear());
-        statement.setInt(5, book.getId());
-        statement.setInt(6, id1);
+            try
+            {
+                PreparedStatement ps;
 
+                if ( book.getId() > 0)
+                {
+                    ps = connection.prepareStatement( "UPDATE book SET id = ?, title = ?, price = ?, page = ?,year = ? WHERE id = ?");
+                    ps.setInt( 3, book.getId());
+                }
+                else
+                {
+                    ps = connection.prepareStatement( "INSERT INTO plane (id, title,price,page,year) VALUES (?,?,?,?,?)" );
+                }
 
-        statement.close();
+                ps.setInt( 1, book.getId());
+                ps.setString( 2, book.getTitle());
+                ps.setDouble( 3, book.getPrice());
+                ps.setInt( 4, book.getYear());
+                ps.setInt( 5, book.getYear());
+                ps.setInt( 6, book.getId());
+                ps.executeUpdate();
+                ps.close();
+            }
+            catch( SQLException e )
+            {
+                e.printStackTrace();
+            }
 
     }
 

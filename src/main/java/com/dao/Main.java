@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         //  StorageDAO databaseDao = DatabaseDAO.getInstance();
         DatabaseDAO databaseDAO = DatabaseDAO.getInstance();
-        //    databaseDAO.saveBook(new Book("book2",25.5,399,2000,9));
+       //     databaseDAO.saveBook(new Book("book2",25.5,399,2000,4));
         List<Book> bookList = databaseDAO.allBooks();
         for (int i = 0; i < bookList.size(); i++) {
             System.out.println(bookList.get(i).getTitle() + " "
@@ -21,9 +21,9 @@ public class Main {
                     bookList.get(i).getYear() + " " +
                     bookList.get(i).getId());
         }
-       // System.out.println(databaseDAO.deleteBook(new Book("book2", 25.5, 399, 2000, 9)));
-        databaseDAO.updateBook(new Book("book4", 26.5, 3929, 2200, 5), 3);
-        System.out.println(databaseDAO.getBook(3));
+        System.out.println(databaseDAO.deleteBook(new Book("Титульна1", 400, 500, 1997, 1)));
+        databaseDAO.updateBook(new Book("book4", 26.5, 3929, 22006, 3));
+      //  System.out.println(databaseDAO.getBook(2));
 
     }
 }
